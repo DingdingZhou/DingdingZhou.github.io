@@ -1,0 +1,44 @@
+## 接口是一种特殊的Struct
+* 不能有字段
+* 不能定义自己的方法
+* 只能声明方法,不能实现
+* 可嵌入其他类型的接口
+
+## 执行机制
+接口使用一个名为itab的结构体存储运行期所需要的相关类型信息
+
+```
+type iface struct{ //只有这两个字段都为nil,接口才为nilj
+	tab *itab//类型信息
+	data unsafePointer //实际对象指针
+}
+
+type itab struct {
+	inter *interfacetype //接口类型
+	_type*_type//实际对象类型
+	fun [1]uintptr//实际对象方法地址
+}
+```
+
+## 重要特征
+* 将对象赋值给接口变量时,会复制该对象
+* 将对象指针赋值给接口变量时,只会复制该对象地址
+* 无法修改接口对象,甚至无法修改接口对象的复制品
+
+## 方法自动生成
+* 会根据receiver T 方法自动生成receiver *T方法
+* 不会根据receiver *T 方法自动生成receiver T方法
+```
+func (a T)myMethod()bool
+->
+func(a* T)myMethod()bool
+```
+
+## 方法集
+方法集仅影响接口实现和方法表达式转换,与通过实例或者指针调用方法无关.实例或者指针并不实用方法集,而是直接调用.
+
+* 类型 T 的方法集包含了所有的 reciever T 的方法
+* 类型 *T 的方法集包含了所有的 Receiver T 和 Receiver*T 的方法
+* 匿名嵌入 S ,T方法集包含所有 receiver S 的方法
+* 匿名嵌入 *S,T方法集包含所有 receiver S 和 Receiver *S 的方法
+* 匿名嵌入 *S 或者 S ,*T 方法集包含所有 receiver S 和 Receiver *S 的方法
