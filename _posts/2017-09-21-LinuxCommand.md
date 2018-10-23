@@ -48,11 +48,15 @@ print resolved symbolic links or canonical file names
 * date -d '2013-2-22 22:14' +%s
 
 
+$ sudo update-rc.d nginx defaults      #增加服务
+$ sudo update-rc.d -f nginx remove    #移除服务
 
 
+sudo su root
 
 
-
+查看日志的最佳姿态
+tail -f log | grep xxx
 
 
 

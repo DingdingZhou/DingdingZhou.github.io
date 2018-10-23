@@ -141,18 +141,68 @@ which命令的作用是，在PATH变量指定的路径中，搜索某个系统�
 
 
 
+## 获取文件绝对路径
+basepath=$(cd `dirname $0`;pwd);
 
 
 
 
 
+## 查看系统限制
+ulimit -a
+修改可以打开的文件数上限
+ulimit -n 4096
 
 
 
 
 
+## sort
+-u :仅输出不重复行
+-d:仅输出重复行
+-c:输出统计信息
+
+
+
+# tail
+* 获取文件最后五行:tail -5
+* 监控文件:tail -f
+
+
+
+## 重定向
+command > file	将输出重定向到 file。
+command < file	将输入重定向到 file。
+command >> file	将输出以追加的方式重定向到 file。
+command <<< $variable 将输入重定向到变量variable内容
+n > file	将文件描述符为 n 的文件重定向到 file。
+n >> file	将文件描述符为 n 的文件以追加的方式重定向到 file。
+n >& m	将输出文件 m 和 n 合并。
+n <& m	将输入文件 m 和 n 合并。
+<< tag	将开始标记 tag 和结束标记 tag 之间的内容作为输入。
 
 
 
 
+
+## 查看端口占用
+* lsof -i:端口号 用于查看某一端口的占用情况，比如查看8000端口使用情况，lsof -i:8000
+* netstat -tlnp  
+
+
+## grep 
+* grep -oP "pattern"
+
+
+## 压缩解压
+* gzip:解压 .gz 程序
+  -d  解压
+  -c  输出至标准输出
+* bzip2 : 解压 .bz2 程序
+  -d  解压
+  -c  输出至标准输出
+* tar 
+  -x  解压
+  -c  压缩
+  -f  指定文件名称
 

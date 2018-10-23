@@ -94,25 +94,46 @@ which命令的作用是，在PATH变量指定的路径中，搜索某个系统�
 
 date -d @Unix timestamp
 
-
-	date +%s -d"Jan 1, 1970 00:00:01"
-
+date +%s -d"Jan 1, 1970 00:00:01"
 
 
-
+df -hl
 
 
 
+抓包测试
+tcpdump -i eth1 host 本地公网ip
+tcpdump -i eth1 icmp
+
+
+traceroute ip（域名） 
+路由跟踪命令 
+- -n 使用ip，速度更快 
+- -q 每次发送的数据包数量，默认是3 
+- -m 设置跳数，默认是30
+
+
+
+ifdown 网卡设备名 ： 关闭网卡
+ifup 网卡设备名 ： 启用网卡
+
+
+
+netstat 网络状态查询
+-t 列出TCP协议端口
+-u 列出UDP协议端口
+-n 不适用域名与服务名，而是用ip地址和端口号
+-l 仅列出在监听端口
+-a 所有的连接
+-r 路由表
 
 
 
 
 
+pidof fcitx | xargs kill
 
-
-
-
-
+xargs:換行和空白被空格代替
 
 
 
