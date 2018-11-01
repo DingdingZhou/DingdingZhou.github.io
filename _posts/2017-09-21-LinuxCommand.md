@@ -29,8 +29,7 @@ print resolved symbolic links or canonical file names
 列出所有的shell赋予程序的环境变量
 
 ## mkdir
-* -p  
-递归创建目录
+* -p : 递归创建目录
 
 ## source
 在当前bash环境下读取并执行FileName中的命令。该命令通常用命令“.”来替代。
@@ -44,20 +43,18 @@ print resolved symbolic links or canonical file names
 * date +%s :当前时间戳
 * date -d @1436781720:时间戳转字符串
 * date -j -f "%Y-%m-%d %H:%M:%S" "2015-07-13 18:02:00" "+%s"
-
 * date -d '2013-2-22 22:14' +%s
 
-
-$ sudo update-rc.d nginx defaults      #增加服务
-$ sudo update-rc.d -f nginx remove    #移除服务
-
-
-sudo su root
+## 开启启动管理
+* $ sudo update-rc.d nginx defaults      #增加服务
+* $ sudo update-rc.d -f nginx remove    #移除服务
 
 
-查看日志的最佳姿态
-tail -f log | grep xxx
+## 查看日志
+* tail -f log | grep xxx
 
+## 用户切换
+* sudo su root
 
 
 
