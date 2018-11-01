@@ -1,25 +1,7 @@
 
+## yii2框架中,导出CSV格式文件
 
-// 逐行取出数据，不浪费内存 
-while ($row = $stmt->fetch(Zend_Db::FETCH_NUM)) { 
-	$cnt ++; 
-	if ($limit == $cnt) { //刷新一下输出buffer，防止由于数据过多造成问题 
-	ob_flush(); 
-	flush(); 
-	$cnt = 0; 
-	} 
-
-	foreach ($row as $i => $v) { 
-	$row[$i] = iconv('utf-8', 'gbk', $v); 
-	} 
-	fputcsv($fp, $row); 
-}
-
-
-
-
-
-
+```
 function exportCSV($fileName,$query,$header){
 	header('Content-Type: application/vnd.ms-excel'); 
 	header('Content-Disposition: attachment;filename="user.csv"'); 
@@ -37,26 +19,5 @@ function exportCSV($fileName,$query,$header){
 		ob_flush(); 
 		flush(); 
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
