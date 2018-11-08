@@ -16,3 +16,9 @@
 
 9. set -o vi 配置 .bashrc
 10. 配置vim
+
+
+
+## mysql
+* 数据库和日志存放位置:/var/lib/mysq
+* 配置存放位置:/etc/mysql/
