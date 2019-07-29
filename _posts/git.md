@@ -115,7 +115,26 @@ cb926e7ea50ad11b8f9e909c05226233bf755030 wrote a readme file
   
 
 
+# PATCH 1
 
+## 常用命令
+  * git status -s/--short
+  * git diff --staged
+	查看暂存区内的修改
+  * git log -p 
+  * git log --stat
+  * git log --pretty
+
+
+## .gitignore 规范
+  * 所有空行或者以 ＃ 开头的行都会被 Git 忽略。
+  * 可以使用标准的 glob 模式匹配。
+  * 匹配模式可以以（/）开头防止递归。
+  * 匹配模式可以以（/）结尾指定目录。
+  * 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。
+
+## 冲突工具
+  *  git mergetool
 
 
 
