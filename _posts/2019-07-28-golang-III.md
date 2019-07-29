@@ -1,8 +1,7 @@
-
 ---
 layout:     post
 title:      "Golang"
-subtitle:   "Part III"
+subtitle:   "Part 3"
 date:       2017-09-22 12:00:00
 author:     "Dingding"
 header-img: "img/post/thrift-header.jpg"
