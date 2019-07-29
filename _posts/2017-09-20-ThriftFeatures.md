@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Thrift Features"
-subtitle:   "Thrift 特征"
+title:      "Thrift"
+subtitle:   "Thrift Feature"
 date:       2017-09-20 12:00:00
 author:     "Dingding"
 header-img: "img/post/thrift-header.jpg"

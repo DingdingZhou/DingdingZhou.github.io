@@ -141,32 +141,3 @@ Leader收到多数Follower的确认消息以后，给客户端发起命令执行
 
 
 最终，候选者S2获得了S1和S2自己的赞成票，那么在它眼里，它就变成了Leader，而S3获得了S4、S5和S3自己的赞成票，在它眼里S3也变成了Leader，那么多Leader的问题就产生了。而产生该问题的最根本原因是S2和S3的系统视图不一致。
---------------------- 
-作者：大笨熊1997 
-来源：CSDN 
-原文：https://blog.csdn.net/xiongwenwu/article/details/79981712 
-版权声明：本文为博主原创文章，转载请附上博文链接！
-
-
-
-
-
-
-
-##
-httpKVAPI:
- 将客户端get，转到KVStore.Lookup()
- 将客户端put，转到KVStore.Propose()
- 将客户端post，写入通道confChangeC,添加节点
- 将客户端delete，写入通道confChangeC,移除节点
-
-
-KVStore:
-Lookup(),从本地已提交记录中查找记录，并返回
-Propose(),写入通道proposeC,添加申请提交
-readCommits(),读取通道commitC，接受并记录进本地提交
-getSnapshot(),生成本地提交的快照
-recoverFromSnapshot(),根据快照恢复本地提交
-
-
-

@@ -1,3 +1,17 @@
+
+---
+layout:     post
+title:      "Golang"
+subtitle:   "Part III"
+date:       2017-09-22 12:00:00
+author:     "Dingding"
+header-img: "img/post/thrift-header.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+	- golang
+---
+
 ## Iteration Values For Strings in "range" Clauses
 
 level: beginner

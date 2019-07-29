@@ -1,3 +1,15 @@
+---
+layout:     post
+title:      "Refactoring"
+subtitle:   ""
+date:       2017-09-22 12:00:00
+author:     "Dingding"
+header-img: "img/post/thrift-header.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+    - refactoring 
+---
 
 ## 为何重构
 * 代码结构的流失是累计性的
@@ -142,31 +154,4 @@ swith语句应只用于决定创建何种类
 * 类和函数应该足够小,以消除标识符前缀.
 * if else while 语句等,其中的代码块应该只有一行.该行大抵是个函数调用语句
 * 每结构化编程规则：每个函数，函数中的每个代码块都应该只有一个入口、一个出口;但是实践表明,更重要的在于保持函数体短小精悍，这时使用多个return ，break等可以更有表达力
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
