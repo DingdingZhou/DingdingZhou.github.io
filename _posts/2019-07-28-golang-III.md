@@ -152,3 +152,29 @@ Naked returns are okay if the function is a handful of lines. Once it's a medium
 
 Finally, in some cases you need to name a result parameter in order to change it in a deferred closure. That is always OK.
 
+
+## http's url
+golang中发送 http 请求时，url地址不能在开头或者结尾多空格,不然报404
+
+## defer
+defer是在return之前执行的。这个在 官方文档中是明确说明了的。要使用defer时不踩坑，最重要的一点就是要明白，return xxx这一条语句并不是一条原子指令!
+
+函数返回的过程是这样的：先给返回值赋值，然后调用defer表达式，最后才是返回到调用函数中。
+defer表达式可能会在设置函数返回值之后，在返回到调用函数之前，修改返回值，使最终的函数返回值与你想象的不一致。
+
+其实使用defer时，用一个简单的转换规则改写一下，就不会迷糊了。改写规则是将return语句拆成两句写，return xxx会被改写成:
+```s
+返回值 = xxx
+    调用defer函数
+空的return
+```
+
+
+## fmt.Print
+结构体实现 String() 方法，即可用此方法个性化打印
+
+##  string + string
+golang 连续加不会有性能问题；小批量多次加才会有
+
+## marshal string
+空字符串会marshal成0，一定要格外注意 
