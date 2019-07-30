@@ -1,15 +1,15 @@
-## pre
-1. 每个音标符号代表一个声音，不可能一个音标两个声音
-2. th：舌头探出上下牙齿一丢丢；
-3. e:嘴唇往两边咧一点，上下牙齿容纳一个手指厚度;ei:双元音有滑动感，最巴上下张大
-4. smile;smell; e;ai
-5. /a:/:嘴唇上下垂直打开,张开幅度中等，小小惊喜；舌位靠后;card,arm,march
-6. //:嘴唇聚拢；靠后抬起舌头；长元音
-7. /i:/:口型嘴角拉开，微笑，扁平；舌位抬起，靠前，舌头边缘与上齿接触
-8. /I/:口型嘴角少少展开,上下牙齿容下半个手指头；舌头放松，在口腔中间偏上，靠前
-
-
-
+---
+layout:     post
+title:      "Business English"
+subtitle:   "Part I"
+date:       2019-07-30 12:00:00
+author:     "Dingding"
+header-img: "img/post/thrift-header.jpg"
+header-mask: 0.3
+catalog:    true
+tags:
+	- English
+---
 
 
 # Business Buzzwords
@@ -133,6 +133,12 @@ develop a synergy within the team
 
 
 
-
-
-
+## pre
+1. 每个音标符号代表一个声音，不可能一个音标两个声音
+2. th：舌头探出上下牙齿一丢丢；
+3. e:嘴唇往两边咧一点，上下牙齿容纳一个手指厚度;ei:双元音有滑动感，最巴上下张大
+4. smile;smell; e;ai
+5. /a:/:嘴唇上下垂直打开,张开幅度中等，小小惊喜；舌位靠后;card,arm,march
+6. //:嘴唇聚拢；靠后抬起舌头；长元音
+7. /i:/:口型嘴角拉开，微笑，扁平；舌位抬起，靠前，舌头边缘与上齿接触
+8. /I/:口型嘴角少少展开,上下牙齿容下半个手指头；舌头放松，在口腔中间偏上，靠前
