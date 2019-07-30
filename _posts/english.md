@@ -8,3 +8,131 @@
 7. /i:/:口型嘴角拉开，微笑，扁平；舌位抬起，靠前，舌头边缘与上齿接触
 8. /I/:口型嘴角少少展开,上下牙齿容下半个手指头；舌头放松，在口腔中间偏上，靠前
 
+
+
+
+
+# Business Buzzwords
+## 处理
+deal with
+handle
+address
+attend to
+
+## 粘性
+stickness
+create brand stickness
+make customers stick to their products
+
+
+## 沉浸式体验
+immersive experience
+immersive user experience
+
+
+## 最简可行产品
+minimum viable product
+commercially viable 商业可行性
+
+
+## 赋能
+empower
+empowering employee  赋能员工o
+
+## 复盘会议
+retrospective meeting
+during the retrospective
+
+
+## 对标
+benchmark
+benchmarking study 竞品调研
+benchmark our products against the best ones in overseas markets
+
+
+## 迭代
+iterate
+fast iteration
+iterative process
+
+
+## 对齐
+let's get aligned with the PM
+
+## 余地
+no leeway to negotiate
+We have been given some leeway in choosing how to carry out projects
+
+## 变现
+monetize
+you could easily monetize  this app
+distince monetization approaches
+
+
+## synergy
+the two teams are planning to work in synergy to make their product more popular
+develop a synergy within the team
+
+
+
+
+
+
+
+# Pictionary
+##
+* 桌垫 clean the desk pad; clean the desk mat
+* 显示器 monitor;   collect the monitor to the laptop
+* 便携式风扇 portable fan;  turn on the portable fan
+
+## 
+* 自动售货机 vending machine; buy a coke from the vending machine
+* 电话厅 phone booth; the phone booth is occupied
+* 捐赠箱 donation bin; donate items
+
+## 
+* 快捷键 keyboard shortcuts；use keyboard shortcuts to lock your screen
+* 密码 password; enter the password to unlock the screen
+* 粉碎机 shredder; shred the no longer needed hard copied
+
+##
+* 书架 bookcase/bookshelf; put books on the bookcase 
+* 伞架 unbrella rack; put the umbrella on the rack
+* 伞架 hanger; please hand me a hanger
+
+##
+* treadmill; setup the treadmill
+* dumbbell; lift the dumbbell
+* yoga mat; roll up the yoga mat
+
+##
+* 贴纸 sticker; put a sticker on something
+* 马克笔 marker; pass me a marker,please
+* 板擦 eraser; erase the whiteboard
+
+##
+* 投影仪 projector; projector my screen
+* 空气净化器 air purifier; turn on/off the air purifier
+* 连接器 adaptor; plug the adaptor into my laptop
+
+##
+* 包裹 package/parcel; collect the package/ 
+* 快递单 shipping  label; check the info on the shipping label
+* 包装盒 carton; recycle the carton
+
+##
+* 纸巾 tissue; would you hand me a tissue
+* 加湿器 humidifier; refill the humidifier
+* 电脑支架 laptop stand;  adjust the laptop stand
+
+##
+* 眼罩 eye mask; wear an eye mask
+* 工卡 badge; swipe your badge 刷工卡
+* 耳塞 earplugs; put on the earplugs
+
+
+
+
+
+
+
