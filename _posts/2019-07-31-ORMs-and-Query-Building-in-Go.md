@@ -27,7 +27,7 @@ tags:
 
 我以前简单地使用过 Gorm，对于简单的、基于 CRUD 的应用程序，这很好。然而，当涉及更多分层复杂性时，我发现它做的并不好。假设我们正在构建一个博客应用程序，我们允许用户通过 URL 中的查询字符串搜索帖子。如果存在这种情况，我们希望用的约束条件：WHERE title LIKE。
 
-~~~ go
+~~~
 posts := make([]Post, 0)
 search := r.URL.Query().Get("search")
 db := Gorm.Open("postgres", "...")
@@ -39,7 +39,7 @@ db.Find(&posts)
 
 没有什么可争议的，我们只是检查是否有值并修改对 Gorm 本身的调用。但是，如果我们想在特定日期之后搜索帖子怎么办？我们需要添加一些检查，首先查看 URL 中是否存在关于日期的查询字符串 (after)，如果存在则修改查询条件。
 
-~~~ go
+~~~
 posts := make([]Post, 0)
 
 search := r.URL.Query().Get("search")
@@ -67,7 +67,7 @@ db.Find(&posts)
 
 标准库中包 database/sql 非常适合与数据库交互。sqlx 是基于此的、处理返回数据的一个优秀扩展。但是，这仍然没有完全解决手头的问题。我们如何高效地、程序化地、符合 Go 语法习惯地构建复杂的查询 ? 假设我们使用 sqlx 进行上述相同的查询，那是什么样子呢？
 
-~~~ go
+~~~
 posts := make([]Post, 0)
 
 search := r.URL.Query().Get("search")
@@ -106,7 +106,7 @@ err := db.Select(&posts, sqlx.Rebind(query), args...)
 
 使用 squirrel，我们可以像这样实现上面的逻辑。
 
-~~~ go
+~~~
 posts := make([]Post, 0)
 
 search := r.URL.Query().Get("search")
@@ -158,7 +158,7 @@ Dave Cheney 根据 Rob Pike 关于同一主题的帖子撰写了两篇关于第�
 
 下面是查询构建的示例：
 
-~~~ go
+~~~
 posts := make([]*Post, 0)
 
 db := sqlx.Open("postgres", "...")
@@ -173,7 +173,7 @@ err := db.Select(&posts, q.Build(), q.Args()...)
 
 我知道，这是一个很简单的例子。但是让我们来看看我们如何实现这样的 API，以便它可以用于查询构建。首先，我们应该实现一个查询结构来跟踪其在构建时的状态。
 
-~~~ go
+~~~
 type statement uint8
 
 type Query struct {
@@ -192,13 +192,13 @@ const (
 
 接下来，我们需要定义一种类型，该类型可用于修改我们正在构建的查询，该类型作为第一类函数将被多次传递。每次调用此函数时，它都应返回新的、被修改后的查询（如果适用）。
 
-~~~ go
+~~~
 type Option func(q Query) Query
 ~~~
 
 我们现在可以实现构建器的第一部分 : Select 函数。 这将开始为我们的 SELECT 语句构建查询。
 
-~~~ go
+~~~
 func Select(opts ...Option) Query {
 	q := Query{
 		stmt: select_,
@@ -215,7 +215,7 @@ func Select(opts ...Option) Query {
 
 您现在应该能够看到一切如何慢慢地汇聚到一起，以及 UPDATE、INSERT、DELETE 等语句怎样简单的构建查询。如果没有实际实现一些 options 并传递到 Select 函数中，上面的 Select 函数是完全无用的，我们来继续实现。
 
-~~~ go
+~~~
 func Columns(cols ...string) Option {
 	return func(q Query) Query {
 		q.cols = cols
@@ -237,7 +237,7 @@ func Table(table string) Option {
 
 为了对我们构建复杂查询的用例有用，我们应该实现 WHERE 向查询添加子句的功能。这将要求必须跟踪 WHERE 查询中的各种子句。
 
-~~~ go
+~~~
 type where struct {
 	col string
 	op  string
@@ -291,7 +291,7 @@ func WhereGt(col string, val interface{}) Option {
 
 因此，我们实现的如此少，并能够以符合语法习惯的方式实现我们期待的功能。
 
-~~~ go
+~~~
 posts := make([]Post, 0)
 
 search := r.URL.Query().Get("search")
@@ -319,7 +319,7 @@ err := db.Select(&posts, q.Build(), q.Args()...)
 
 稍好一点，但仍然不是很好。但是，我们可以扩展功能以获得我们想要的功能。因此，让我们实现一些函数，这些函数将返回满足我们特定需求的 Option。
 
-~~~ go
+~~~
 func Search(col, val string) Option {
 	return func(q Query) Query {
 		if val == "" {
@@ -343,7 +343,7 @@ func After(val string) Option {
 
 通过实现上述两个函数，我们现在可以干净地为我们的用例构建一个稍微复杂的查询。如果传递给它们的值被认为是正确的，这两个函数都只会修改查询。
 
-~~~ go
+~~~
 posts := make([]Post, 0)
 
 search := r.URL.Query().Get("search")
