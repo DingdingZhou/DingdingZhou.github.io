@@ -27,7 +27,7 @@ tags:
 
 我以前简单地使用过 Gorm，对于简单的、基于 CRUD 的应用程序，这很好。然而，当涉及更多分层复杂性时，我发现它做的并不好。假设我们正在构建一个博客应用程序，我们允许用户通过 URL 中的查询字符串搜索帖子。如果存在这种情况，我们希望用的约束条件：WHERE title LIKE。
 
-~~~
+```
 posts := make([]Post, 0)
 search := r.URL.Query().Get("search")
 db := Gorm.Open("postgres", "...")
@@ -35,7 +35,7 @@ if search != "" {
 	db = db.Where("title LIKE ?", "%" + search + "%")
 }
 db.Find(&posts)
-~~~
+```
 
 没有什么可争议的，我们只是检查是否有值并修改对 Gorm 本身的调用。但是，如果我们想在特定日期之后搜索帖子怎么办？我们需要添加一些检查，首先查看 URL 中是否存在关于日期的查询字符串 (after)，如果存在则修改查询条件。
 
