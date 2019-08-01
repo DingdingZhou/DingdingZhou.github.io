@@ -27,7 +27,8 @@ tags:
 
 我以前简单地使用过 Gorm，对于简单的、基于 CRUD 的应用程序，这很好。然而，当涉及更多分层复杂性时，我发现它做的并不好。假设我们正在构建一个博客应用程序，我们允许用户通过 URL 中的查询字符串搜索帖子。如果存在这种情况，我们希望用的约束条件：WHERE title LIKE。
 
-~~~
+~~~go
+
 posts := make([]Post, 0)
 search := r.URL.Query().Get("search")
 db := Gorm.Open("postgres", "...")
@@ -255,7 +256,7 @@ type Query struct {
 
 我们为 WHERE 子句定义了一种自定义类型，并向原始 Query 结构添加一个属性 wheres。让我们为我们的需求实现两种类型的 Where 子句，第一种是 WHERE LIKE，另一种是 `WHERE >`。
 
-~~~go
+~~~
 func WhereLike(col string, val interface{}) Option {
 	return func(q Query) Query {
 		w := where{
