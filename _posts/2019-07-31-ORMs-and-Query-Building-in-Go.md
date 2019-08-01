@@ -11,7 +11,7 @@ tags:
     - ORM
 ---
 
-首发于：https://studygolang.com/articles/22296
+首发于：[https://studygolang.com/articles/22296](https://studygolang.com/articles/22296)
 
 # 在 Go 中的 ORM 和查询构建
 
