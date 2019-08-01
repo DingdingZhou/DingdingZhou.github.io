@@ -39,7 +39,7 @@ db.Find(&posts)
 
 没有什么可争议的，我们只是检查是否有值并修改对 Gorm 本身的调用。但是，如果我们想在特定日期之后搜索帖子怎么办？我们需要添加一些检查，首先查看 URL 中是否存在关于日期的查询字符串 (after)，如果存在则修改查询条件。
 
-~~~go
+~~~ go
 posts := make([]Post, 0)
 
 search := r.URL.Query().Get("search")
