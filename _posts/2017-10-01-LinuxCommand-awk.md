@@ -14,11 +14,10 @@ tags:
 
 引用自：[三十分钟学会AWK](http://blog.jobbole.com/109089/)
 
-# awk
+## awk
 pattern scanning and text processing language
 
-* 工作流程
-
+工作流程
 ```flow
 st=>start: Excute AWK commands from BEGIN block
 e=>end: Excute AWK commands from END block
@@ -31,10 +30,10 @@ st->read->execute->cond
 cond(yes)->e
 cond(no,right)->read
 ```
+***
 
-* 程序框架
+程序框架
 注意:BEGIN/End是awk的关键字,必须大写
-
 ```bash
 BEGIN {awk-commands}
 
@@ -43,8 +42,8 @@ BEGIN {awk-commands}
 END {awk-commands}
 ```
 
-# awk example
-* 将最后一列的日期型字符串转为时间戳
+## awk example
+将最后一列的日期型字符串转为时间戳
 ```sh
 #!/bin/bash
 awk '{
