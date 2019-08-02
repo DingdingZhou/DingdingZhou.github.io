@@ -3,11 +3,11 @@
   "short_name": "Blog",
   "description": "Thinking...",
   "icons": [{
-    "src": "img/icon_wechat.png",
+    "src": "/img/icon_wechat.png",
     "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "img/icon_wechat.png",
+    "src": "/img/icon_wechat.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
