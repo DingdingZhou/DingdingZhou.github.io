@@ -8,7 +8,7 @@ header-img: "img/post/thrift-header.jpg"
 header-mask: 0.3
 catalog:    true
 tags:
-	- golang
+   - golang
 ---
 
 ## Iteration Values For Strings in "range" Clauses

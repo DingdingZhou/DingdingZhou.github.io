@@ -1,14 +1,16 @@
 ---
-layout:     post
-title:      "Linux Command -- Part I"
-subtitle:   "第一篇"
+layout:     "post"
+title:      "Linux Command"
+subtitle:   "Part I"
 date:       2017-09-21 12:00:00
-author:     "Dingding" header-img: "img/post/thrift-header.jpg"
+author:     "Dingding"
+header-img: "img/post/thrift-header.jpg"
 header-mask: 0.3
 catalog:    true
 tags:
     - linux command
 ---
+
 
 ## uname
 Print certain system information
