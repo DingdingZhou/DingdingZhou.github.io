@@ -12,13 +12,10 @@ tags:
     - linux command
 ---
 
+引用自：[三十分钟学会AWK](http://blog.jobbole.com/109089/)
+
 # awk
 pattern scanning and text processing language
-
-* 优秀博客
-
-[三十分钟学会AWK](http://blog.jobbole.com/109089/)
-
 
 * 工作流程
 
@@ -35,13 +32,10 @@ cond(yes)->e
 cond(no,right)->read
 ```
 
-
 * 程序框架
-
 注意:BEGIN/End是awk的关键字,必须大写
 
-```
-
+```bash
 BEGIN {awk-commands}
 
 /pattern/ {awk-commands}
@@ -49,11 +43,10 @@ BEGIN {awk-commands}
 END {awk-commands}
 ```
 
-
 # awk example
+* 将最后一列的日期型字符串转为时间戳
 ```sh
 #!/bin/bash
-
 awk '{
 	for (i=1;i<NF;i++){
 		printf $i "\t";
