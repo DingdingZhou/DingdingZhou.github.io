@@ -2,7 +2,7 @@
 layout:     post
 title:      "ORM or Not ORM"
 subtitle:   ""
-date:       2019-08-03 12:00:00
+date:       2019-08-04 12:00:00
 author:     "Dingding"
 header-img: "img/post/thrift-header.jpg"
 header-mask: 0.3
