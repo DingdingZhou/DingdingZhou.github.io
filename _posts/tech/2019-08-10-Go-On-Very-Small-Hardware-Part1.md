@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Go 最小硬件编程（第一部分"
+title:      "Go 最小硬件编程（第一部分)"
 subtitle:   ""
 date:       2019-08-11 12:00:00
 author:     "Dingding"
