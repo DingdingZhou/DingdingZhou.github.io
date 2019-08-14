@@ -11,7 +11,7 @@ tags:
     - golang 
 ---
 
-首发于：https://studygolang.com/articles/22773
+首发于：[https://studygolang.com/articles/22773](https://studygolang.com/articles/22773)
 
 # Go: Concurrency Access with Maps — Part III
 

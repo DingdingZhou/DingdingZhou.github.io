@@ -11,7 +11,7 @@ tags:
     - golang
 ---
 
-已发布：https://studygolang.com/articles/22742
+首发于：[https://studygolang.com/articles/22742](https://studygolang.com/articles/22742)
 
 # Go 最小硬件编程（第一部分）
 
