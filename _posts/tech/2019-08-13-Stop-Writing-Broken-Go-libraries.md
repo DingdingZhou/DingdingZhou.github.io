@@ -11,7 +11,7 @@ tags:
     - golang 
 ---
 
-首发于：[https://studygolang.com/articles/22835]https://studygolang.com/articles/22835
+首发于：[https://studygolang.com/articles/22835](https://studygolang.com/articles/22835)
 
 不久前我和朋友们想出一个主意，准备合并我们的 IRC bots，并用 Go 重写它们。为了防止重写大部分现有功能，我们试图找到支持 bots 程序中使用的 `Web API` 的现有库。我们的项目需要一个 Reddit API 的库。这篇文章启发于我找到的前三个库，我不打算说出它们的名字，以免羞辱它们的作者。
 
