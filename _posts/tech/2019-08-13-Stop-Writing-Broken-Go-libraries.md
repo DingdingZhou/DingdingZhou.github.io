@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Stop Writing Broken Go libraries"
+title:      "Stop Writing Broken Go Libraries"
 subtitle:   ""
 date:       2019-08-13 12:00:00
 author:     "Dingding"
