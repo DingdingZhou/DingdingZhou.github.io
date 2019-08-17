@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Go: Concurrency Access with Maps"
+title:      "Stop Writing Broken Go libraries"
 subtitle:   ""
 date:       2019-08-13 12:00:00
 author:     "Dingding"
