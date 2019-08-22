@@ -48,7 +48,10 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: DingdingZhou
+# disqus_username: DingdingZhou
+
+# isso comment
+use_isso: true
 
 # Netease setttings
 netease_comment: false

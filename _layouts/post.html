@@ -90,6 +90,24 @@ layout: default
                 <!-- disqus 评论框 end -->
                 {% endif %}
 
+                {% if site.use_isso %}
+                <div class="comment">
+                    <section id="isso-thread" ></section>
+                    <!--然后引入 embed.min.js 插件-->
+                    <script data-isso="http://blog.zhoudingding.com/isso/"
+                            data-isso-require-author="false"
+                            data-isso-require-email="false"
+                            data-isso-max-comments-top="20"
+                            data-isso-css="true"
+                            data-isso-max-comments-nested="10"
+                            data-isso-reveal-on-click="20"
+                            data-isso-avatar-fg="#9abf88 #5698c4 #e279a3 #9163b6 ..."
+                            src="http://blog.zhoudingding.com/isso/js/embed.min.js"></script>
+
+                </div>
+                {% endif %}
+
+
                 {% if site.netease_comment %}
                 <!-- 网易云跟帖 评论框 start -->
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
