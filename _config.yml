@@ -56,7 +56,8 @@ use_isso: true
 # Netease setttings
 netease_comment: false
 
-
+# weChat share settings
+wechat_share: true
 
 # Analytics settings
 # Baidu Analytics 

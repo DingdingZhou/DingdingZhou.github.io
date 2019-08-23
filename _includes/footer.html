@@ -107,6 +107,8 @@
 <script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
 
 
+
+
 <!-- Service Worker -->
 {% if site.service-worker %}
 <script src="{{ "/js/snackbar.js " | prepend: site.baseurl }}"></script>
@@ -252,3 +254,58 @@
     });
 </script>
 {% endif %}
+
+
+<!-- weixin -->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script>
+    var title = "{{ page.title }}";
+    var desc = "Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}";
+
+    window.share_config = {
+        "share": {
+        "imgUrl": "http://blog.zhoudingding.com/img/post/thrift-header.jpg",
+            "desc" : desc,
+            "title" : title,
+            "link": window.location.href,
+            "success":function(){
+            },
+            'cancel': function () { 
+            }
+        }
+    };
+
+    url = location.href.split('#')[0];
+    $.ajax({
+        url: "/jssdk_sign.php?", 
+        data: {"url":url},
+        type: "POST",
+        dataType: "json",
+        success: function(data) {
+            // data = jQuery.parseJSON(data);  //dataType指明了返回数据为json类型，故不需要再反序列化
+            wx.config({
+                debug: true,
+                appId: data.appId,
+                timestamp: data.timestamp,
+                nonceStr: data.nonceStr,
+                signature: data.signature,
+                jsApiList: [
+                // 所有要调用的 API 都要加到这个列表中
+                    'checkJsApi',
+                    'onMenuShareTimeline',//
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo'
+                ]
+            });
+
+            wx.ready(function () {
+                wx.onMenuShareAppMessage(share_config.share);//分享给好友
+                wx.onMenuShareTimeline(share_config.share);//分享到朋友圈
+                wx.onMenuShareQQ(share_config.share);//分享给手机QQ
+            });
+
+        }
+    });
+</script>
+
