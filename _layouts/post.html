@@ -21,7 +21,26 @@ layout: default
         background: rgba(0,0,0, {{ page.header-mask }});
     }
     {% endif %}
+
+
+    {% if site.use_isso %}
+    .isso-comment > div.avatar {
+        /* 头像旋转效果 */
+        -webkit-transition:0.4s;
+        -webkit-transition:-webkit-transform 0.4s ease-out;
+        transition:transform 0.4s ease-out;
+        -moz-transition:-moz-transform 0.4s ease-out;
+    }
+    .isso-comment > div.avatar:hover {
+        /* 头像旋转效果 - 鼠标经过时 */
+        transform:rotateZ(360deg);
+        -webkit-transform:rotateZ(360deg);
+        -moz-transform:rotateZ(360deg);
+    }
+    {% endif %}
+
 </style>
+
 <header class="intro-header" >
     <div class="header-mask"></div>
     <div class="container">
