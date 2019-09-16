@@ -1,3 +1,16 @@
+---
+layout: post
+title: "Go：关于 Cobra 的想法"
+subtitle: ""
+date: 2019-09-15 12:00:00
+author: "Dingding"
+header-img: "img/post/thrift-header.jpg"
+header-mask: 0.3
+catalog: true
+tags:
+    - golang
+---
+
 首发于：https://studygolang.com/articles/23438
 
 # Go：关于 Cobra 的想法
@@ -107,11 +120,11 @@ main.go:4:2: use of internal package cmd/go/internal/base not allowed
 
 Cobra 有一些值得了解的简便方法：
 
-* Cobra 提供了两种方法来运行我们的逻辑： `Run func(cmd *Command, args []string)` 和 `RunE func(cmd *Command, args []string) error` ，后者可以返回一个错误，我们将能够从 `Execute()` 方法的返回中捕获。
+-   Cobra 提供了两种方法来运行我们的逻辑： `Run func(cmd *Command, args []string)` 和 `RunE func(cmd *Command, args []string) error` ，后者可以返回一个错误，我们将能够从 `Execute()` 方法的返回中捕获。
 
-* `Command` 结构 提供了一个 `Aliases（别名）` 属性，允许我们将命令迁移到一个新名称，而不需要在`alias`属性中通过映射旧名称来破坏现有的行为。这种兼容性策略甚至可以通过使用 `Deprecated` 属性来增强，该属性允许您将一个命令标记为`Deprecated(即将弃用，不推荐使用)`，并在删除它之前提供一个简短的说明。
+-   `Command` 结构 提供了一个 `Aliases（别名）` 属性，允许我们将命令迁移到一个新名称，而不需要在`alias`属性中通过映射旧名称来破坏现有的行为。这种兼容性策略甚至可以通过使用 `Deprecated` 属性来增强，该属性允许您将一个命令标记为`Deprecated(即将弃用，不推荐使用)`，并在删除它之前提供一个简短的说明。
 
-* 由于每个命令都可以嵌入其他命令，因此 Cobra 本身支持嵌套命令，并允许我们像下边这样编写：
+-   由于每个命令都可以嵌入其他命令，因此 Cobra 本身支持嵌套命令，并允许我们像下边这样编写：
 
 ```sh
 go run main.go foo bar
@@ -166,6 +179,7 @@ func newNestedCommand() *cobra.Command {
 ```
 
 可以使用嵌套命令是 [决定构建 Cobra](https://spf13.com/post/announcing-cobra/)的主要动机之一
+
 <!-- The nested commands were one of the main motivations when [deciding to build Cobra](https://spf13.com/post/announcing-cobra/). -->
 
 ## 轻量
@@ -233,7 +247,7 @@ Cmd-8  646 ± 0%
 
 让我们回顾两个可以替代 Cobra 的项目：
 
-* [cli](https://github.com/urfave/cli)，一个用于构建命令行应用程序的包。这个包和 Cobra 一样流行，与嵌套命令，bash 补全，hook（钩子），alias(别名)等非常相似。但是，与 Cobra 不同，这个包使用 Go 库中的原生`flag`包。
+-   [cli](https://github.com/urfave/cli)，一个用于构建命令行应用程序的包。这个包和 Cobra 一样流行，与嵌套命令，bash 补全，hook（钩子），alias(别名)等非常相似。但是，与 Cobra 不同，这个包使用 Go 库中的原生`flag`包。
 
 urfave/cli 例子：
 
@@ -266,7 +280,7 @@ func main() {
 }
 ```
 
-* [subcommands](https://github.com/google/subcommands)：虽然托管在 Google 的 Github 帐户中，但该项目并非官方 Google 产品。该库也很简单
+-   [subcommands](https://github.com/google/subcommands)：虽然托管在 Google 的 Github 帐户中，但该项目并非官方 Google 产品。该库也很简单
 
 google/subcommands 示例
 
