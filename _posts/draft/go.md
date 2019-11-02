@@ -26,3 +26,11 @@ go 创建一个新的 goroutine，Go scheduler 会考虑调度
 当 goroutine 进行系统调用时，会阻塞 M，所以它会被调度走，同时一个新的 goroutine 会被调度上来
 * 内存同步访问	
 atomic，mutex，channel 操作等会使 goroutine 阻塞，因此会被调度走。等条件满足后（例如其他 goroutine 解锁了）还会被调度上来继续运行
+
+
+
+go build without further arguments builds the entire package in the current directory, including all Go and C source files.
+
+go build main.go builds only the file main.go, as if that file is the entire Go package. (Search for “If the arguments are a list of .go files” in https://golang.org/cmd/go/#hdr-Compile_packages_and_dependencies.)
+
+In the context of a cgo build, go build main.go would assume that all of the necessary C libraries are already compiled and installed (and presumably specified using a // #cgo LDFLAGS: -lfoo comment or similar). So if that's the difference you observed, then it sounds like everything is working as documented
