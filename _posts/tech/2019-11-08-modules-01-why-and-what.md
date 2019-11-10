@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Modules 第 1 部分：为什么和做什么"
+title: "Module 第 1 部分：为什么和做什么"
 subtitle: ""
 date: 2019-11-08 12:00:00
 author: "Dingding"
@@ -13,7 +13,7 @@ tags:
 
 首发于：https://studygolang.com/articles/24580
 
-# Modules 第 1 部分：为什么和做什么
+# Module 第 1 部分：为什么和做什么
 
 ## 引言
 
