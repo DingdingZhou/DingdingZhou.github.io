@@ -1,8 +1,9 @@
+
 ---
 layout: post
 title: "Go 垃圾回收：第三部分 - GC 的步调"
 subtitle: ""
-date: 2019-11-01 12:00:00
+date: 2019-11-07 12:00:00
 author: "Dingding"
 header-img: "img/post/thrift-header.jpg"
 header-mask: 0.3
